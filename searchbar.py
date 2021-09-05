@@ -1,11 +1,11 @@
 import tweepy
 import time 
 
-apikey = ""
-apikey_sec = ""
+apikey = "************************"
+apikey_sec = "**************************"
 
-access = ""
-access_sec = ""
+access = "**********************************"
+access_sec = "************************************"
 
 
 auth = tweepy.OAuthHandler(apikey, apikey_sec)
@@ -39,3 +39,4 @@ def searchBot(HASH_TAG):
 searchBot("#100DaysOfCode")
 searchBot("#themanbentil")
 searchBot("#pukkaTech")
+searchBot("#bentilzone")
