@@ -108,8 +108,8 @@ def start_bot():
     while True:
         follow_followers()
         unfollow_unfollowers()
-        # follow_hashtag("#themanbentil")
-        # follow_hashtag("#pukkaTech")
+        follow_hashtag("#themanbentil")
+        follow_hashtag("#pukkaTech")
         follow_hashtag("#bentilzone")
         time.sleep(2)
 
