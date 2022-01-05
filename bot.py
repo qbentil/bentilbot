@@ -1,11 +1,11 @@
 import tweepy
 import time
 
-apikey = "DwritOI3StjGBKzVWXXq0D4ke"
-apikey_sec = "aNweEbk1IQNyIl9hvjXkfsR6v1YwAT3XnNYwf9OtQkkRNsPUVY"
+apikey = "************************"
+apikey_sec = "**************************"
 
-access = "1392956155614449664-MHHOm5lCnbVWS5DYNwR0NoJvKUYHaC"
-access_sec = "6Pq4LyuPaFsuna3Gxa7l7gcuO4ujt0J3pT0pV08zsv4kg"
+access = "**********************************"
+access_sec = "************************************"
 
 
 auth = tweepy.OAuthHandler(apikey, apikey_sec)
