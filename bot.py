@@ -66,7 +66,7 @@ def unfollow_unfollowers():
         user_ids = [user.id for user in page]
         for relationship in api._lookup_friendships(user_ids):
             if not relationship.is_followed_by:
-                print('Unfollowing @%s (%d)', relationship.screen_name, relationship.id)
+                # print('Unfollowing @%s (%d)', relationship.screen_name, relationship.id)
                 try:
                     api.destroy_friendship(relationship.id)
                 except tweepy.TweepError as e:
@@ -78,7 +78,7 @@ def follow_followers():
         if not user.following:
             try:
                 user.follow()
-                print("User followed!")
+                # print("User followed!")
             except tweepy.TweepError as e:
                 print(e.reason)
             except StopIteration:
@@ -108,9 +108,7 @@ def start_bot():
     while True:
         follow_followers()
         unfollow_unfollowers()
-        follow_hashtag("#themanbentil")
-        follow_hashtag("#pukkaTech")
-        follow_hashtag("#bentilzone")
+
         time.sleep(2)
 
 
