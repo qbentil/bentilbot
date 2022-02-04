@@ -2,7 +2,6 @@
 To use this bot,
 You will require API Key and Access Key.
 
-
 Signup at https://developer.twitter.com to get access to the twitter API Keys for develpers
 
 ##### About the Bot ######
