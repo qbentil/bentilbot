@@ -22,7 +22,7 @@ tweetHandler = 10
 
 
 
-def searchBot(HASH_TAG):
+def followHashTag(HASH_TAG):
     tweets = tweepy.Cursor(api.search, HASH_TAG).items(tweetHandler)
     for tweet in tweets:
         try:
@@ -36,7 +36,7 @@ def searchBot(HASH_TAG):
 
             
 # Run the function with the hashtag you want to search as parameter
-searchBot("#100DaysOfCode")
-searchBot("#themanbentil")
-searchBot("#pukkaTech")
-searchBot("#bentilzone")
+# followHashTag("#100DaysOfCode")
+# followHashTag("#themanbentil")
+# followHashTag("#pukkaTech")
+# followHashTag("#bentilzone")
