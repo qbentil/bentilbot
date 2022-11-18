@@ -1,19 +1,6 @@
 import tweepy
 import time
-# from searchbar import followHashTag
-apikey = "************************"
-apikey_sec = "**************************"
-
-access = "**********************************"
-access_sec = "************************************"
-
-
-auth = tweepy.OAuthHandler(apikey, apikey_sec)
-auth.set_access_token(access, access_sec)
-
-
-# Seconde
-api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
+from auth import api
 
 FILE_NAME = "lastseen.txt"
 
@@ -33,16 +20,19 @@ def store_last_seen(FILE_NAME, last_seen_id):
 
 def check_mentions():
     tweets = api.mentions_timeline(read_last_seen(FILE_NAME), tweet_mode = "extended")
+    new_last_seen = None
     for tweet in reversed(tweets):
-        if("code" in tweet.full_text.lower() or "programming" in tweet.full_text.lower()):
+        if("bentilzone" in tweet.full_text.lower() or "bentilbot" in tweet.full_text.lower()):
             try:
                 print(str(tweet.id)+" - "+tweet.full_text)
-                api.update_status("@"+tweet.user.screen_name + " Awesome! Keep it up.", tweet.id) #comment
+                api.update_status("@"+tweet.user.screen_name + " Awesome!.", tweet.id, auto_populate_reply_metadata = True) #comment
                 api.create_favorite(tweet.id) #Like
                 api.retweet(tweet.id) #retweet
-                store_last_seen(FILE_NAME, tweet.id)
+                new_last_seen = tweet.id
             except tweepy.TweepError as e:
                 print(e.reason)
+        if new_last_seen:
+            store_last_seen(FILE_NAME, new_last_seen)
 
 # retweet and like post with a hashtag
 def follow_hashtag(HASH_TAG):
@@ -89,14 +79,6 @@ def follow_followers():
 def hashTags(*args):
     for arg in args:
         follow_hashtag(arg)
-
-
-
-
-
-
-
-
 
 
 
