@@ -1,10 +1,10 @@
 import tweepy
 
-apikey = "PfxReSRMQ7ubF5qOaba3FHwia"
-apikey_sec = "ERjSh9cbEMVCElI6olsCSKEN1O9jQRzBzQhKm4BF8jzrDj6bBZ"
+apikey = ""
+apikey_sec = ""
 
-access = "1392956155614449664-GMjI1IvZ1P5u2WnntQVB1eyqpqOzkj"
-access_sec = "zZAYD1pBekJVpR6H91A0YXDvR767jbF0sAJsbEFP43FpK"
+access = ""
+access_sec = ""
 
 
 auth = tweepy.OAuthHandler(apikey, apikey_sec)
