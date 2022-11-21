@@ -1,15 +1,12 @@
 import tweepy
+from env import API_KEY, API_SECRET_KEY, ACCESS_KEY, ACCESS_SECRET_KEY  # import the keys from env.py
 
-apikey = ""
-apikey_sec = ""
+# Authenticate to Twitter
 
-access = ""
-access_sec = ""
-
-
-auth = tweepy.OAuthHandler(apikey, apikey_sec)
-auth.set_access_token(access, access_sec)
+auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET_KEY)
 
 
-# Seconde
+# Create API object	
 api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
+
