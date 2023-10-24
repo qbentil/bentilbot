@@ -8,5 +8,5 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET_KEY)
 
 
 # Create API object	
-api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
