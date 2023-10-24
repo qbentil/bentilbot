@@ -64,7 +64,7 @@ def unfollow_unfollowers():
 
 # Follow all followers
 def follow_followers():
-    for user in tweepy.Cursor(api.followers).items():
+    for user in tweepy.Cursor(api.get_followers).items():
         if not user.following:
             try:
                 user.follow()
